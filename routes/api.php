@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/tasks/create', [TaskController::class, 'create']);
+Route::get('/tasks/delete/{id}', [TaskController::class, 'destroy']);
